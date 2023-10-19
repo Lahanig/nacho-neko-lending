@@ -65,13 +65,112 @@ export default {
         </nav>
 
         <div class="wrapper">
+            <div class="wrapper-inner">
+                
+                <div class="container">
+
+                    <div class="wrapper-inner-body my-auto">
+                        <span>
+                            The Nacho's Lending
+                            This is a fan lending dedicated to Nacho Neko, it was created for the practice of website layout.
+                            <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Fun alert</button>
+                        </span>
+
+                        
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal window</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                    </div>
+                    <div class="modal-body">
+                        This funy modal window
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 </template>
 
 <style scoped>
-header {
-    margin-bottom: 5rem;
+.wrapper {
+    width: 100%;
+    height: 100vh;
+
+    margin-top: 75px;
+}
+
+.wrapper-inner {
+    width: 100%;
+    height: calc(100vh);
+
+    display: flex;
+
+    padding-top: calc(2rem + 10vh);
+
+    background: url('../assets/imgs/background.png') no-repeat top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.wrapper-inner-body {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    border: 0px solid red;
+
+    color: #eee;
+}
+
+.wrapper-inner-body span {
+    display: flex;
+
+    max-width: 450px;
+    width: 100%;
+
+    padding-left: 1rem;
+
+    font-size: 1.6em;
+
+    border: 0px solid red;
+
+    flex-direction: column;
+}
+
+.wrapper-inner-body button {
+    padding: 1rem;
+
+    color: #eee;
+    
+    max-width: 150px;
+
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+
+    transition: all ease .3s;
+}
+
+.wrapper-inner-body button:hover {
+    background-color: var(--primary-color-soft);
+    border-color: var(--primary-color-soft);
+}
+
+.wrapper-inner-body button:focus {
+    background-color: var(--primary-color-mute);
+    border-color: var(--primary-color-mute);
 }
 
 nav {
@@ -191,6 +290,31 @@ header {
 
     .navbar-line .btn {
         display: none;
+    }
+
+    .wrapper-inner {
+        /* background-attachment: fixed; */
+        padding-top: 12rem;
+    }
+
+    .wrapper-inner-body span {
+        margin-left: 15%;
+
+        font-size: 1.8em;
+    }
+}
+
+@media (min-width: 2624px) {
+    .wrapper-inner-body span {
+        font-size: 2.4em;
+
+        margin-left: 10%;
+
+        max-width: 600px;
+    }
+
+    .wrapper-inner {
+        padding-top: calc(12rem + 10vh);
     }
 }
 </style>

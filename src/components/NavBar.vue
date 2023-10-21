@@ -262,7 +262,7 @@ nav {
 
 .navbar-line .btn {
     padding: .5rem .5rem;
-    margin-right: .5rem;
+    margin-right: 0rem;
 
     color: var(--color-text);
     border: none;

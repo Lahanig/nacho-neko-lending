@@ -40,7 +40,9 @@ export default {
             this.backgroundMusic.volume = 0.025
 
             if (this.isBackgroundMusicToggled == false) {
-                this.backgroundMusic.play()
+                this.backgroundMusic.play().catch(() => {setInterval(() => {
+                    this.backgroundMusic.play()   
+                }, 100)})
                 this.isBackgroundMusicToggled = true
             } else {
                 this.backgroundMusic.pause()
@@ -50,23 +52,22 @@ export default {
     },
     mounted() {
         let bgMusicInterval = setInterval(() => {
-            if (this.isBackgroundMusicToggled === false) {
-                // eslint-disable-next-line no-unused-vars
-                this.backgroundMusic.play().then(() => {
-                    console.log("Интервал очищен")
-                    console.log("Воспроизведена фоновая музыка")
-                    this.isBackgroundMusicToggled = true
+            // eslint-disable-next-line no-unused-vars
+            this.backgroundMusic.play().then(() => {
+                console.log("Интервал очищен")
+                console.log("Воспроизведена фоновая музыка")
+                this.isBackgroundMusicToggled = true
 
-                    clearInterval(bgMusicInterval) 
-                })
-                // eslint-disable-next-line no-unused-vars
-                .catch((e) => {
-                    console.log("Не удалось воспроизвести фоновую музыку")
-                    this.isBackgroundMusicToggled = false
-                })
+                clearInterval(bgMusicInterval) 
+            })
+            
+            // eslint-disable-next-line no-unused-vars
+            .catch((e) => {
+                console.log("Не удалось воспроизвести фоновую музыку")
+                this.isBackgroundMusicToggled = false
+            })
 
-                this.backgroundMusic.volume = 0.025
-            }
+            this.backgroundMusic.volume = 0.025
         }, 100)
     }
 }

@@ -3,11 +3,11 @@
         <div class="container">
             <div class="slider-inner">
 
-                <div class="slider-inner-header">
+                <div class="slider-inner-header wow slideInLeft" data-wow-duration="1s" data-wow-delay=".0s" data-wow-offset="200" data-wow-iteration="1">
                     Gallery
                 </div>
 
-                <div class="slider-inner-body">
+                <div class="slider-inner-body wow wow slideInRight" data-wow-duration="1s" data-wow-delay=".0s" data-wow-offset="200" data-wow-iteration="1">
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>

@@ -3,11 +3,11 @@
         <div class="container">
             <div class="trivia-inner">
 
-                <div class="trivia-inner-header">
+                <div class="trivia-inner-header wow fadeInDown" data-wow-duration="1s" data-wow-delay=".0s" data-wow-offset="300" data-wow-iteration="1">
                     <span>Trivia</span>
                 </div>
 
-                <div class="trivia-inner-body mt-2">
+                <div class="trivia-inner-body mt-2 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".0s" data-wow-offset="200" data-wow-iteration="1">
                     <span>
                         <ul>
                             <li>Before becoming a VTuber herself, Nacho created character designs for other VTubers such as Gawr Gura, Araka Luto and Draki Kona, and redesigned VTubers such as Kamiko Kana and Gokigen Naname. She also created the character design for an independent VTuber, Karubi Akami.</li>

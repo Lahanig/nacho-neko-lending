@@ -3,12 +3,12 @@
         <div class="container">
             <div class="wiki-inner">
 
-                <div class="wiki-inner-header">
+                <div class="wiki-inner-header wow fadeInDown">
                     <span>Name card</span>
                 </div>
 
                 <div class="wiki-inner-body mt-3">
-                    <div class="wiki-inner-body-text-section" id="s-1">
+                    <div class="wiki-inner-body-text-section wow slideInLeft" id="s-1" data-wow-duration="1s" data-wow-delay=".0s" data-wow-offset="100" data-wow-iteration="1">
                         <span>
                             Nachoneko (なちょ猫); also known by her real name Amashiro Natsuki (甘城なつき) is a female independent Japanese Virtual YouTuber and illustrator. <br><br>
                             She joined Twitter in November 2013 and her YouTube channel was created on 19 July 2014. Prior to becoming a VTuber, Nacho did occasional streams on her Twitch channel.<br><br>
@@ -16,7 +16,7 @@
                         </span>
                     </div>
 
-                    <div class="wiki-inner-body-text-section" id="s-2">
+                    <div class="wiki-inner-body-text-section wow slideInRight" id="s-2" data-wow-duration="1s" data-wow-delay=".0s" data-wow-offset="100" data-wow-iteration="1">
                         <div class="wiki-inner-body-text-section-img">
                             <img src="../../assets/imgs/name-card.webp" draggable="false">
                         </div>

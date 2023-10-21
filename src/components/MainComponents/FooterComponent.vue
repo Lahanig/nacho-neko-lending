@@ -1,18 +1,18 @@
 <template>
-    <footer class="footer mt-5">
+    <footer class="footer mt-5 wow fadeInDown" data-wow-duration="1s" data-wow-delay=".0s" data-wow-offset="10" data-wow-iteration="1">
         <div class="footer-inner">
             <div class="footer-inner-body">
 
-                <div class="footer-inner-body" id="s-1">
+                <div class="footer-inner-body wow slideInLeft" id="s-1" data-wow-duration="1s" data-wow-delay=".0s" data-wow-offset="10" data-wow-iteration="1">
                     <span><a href="https://virtualyoutuber.fandom.com/wiki/Nachoneko" target="_blank">virtualyoutuber.fandom.com/wiki/Nachoneko</a></span>
                     <span><a href="https://twitter.com/amsrntk3" target="_blank">@amsrntk3</a></span>
                 </div>
 
-                <div class="footer-inner-body mobile" id="s-2">
+                <div class="footer-inner-body mobile wow slideInRight" id="s-2" data-wow-duration="1s" data-wow-delay=".0s" data-wow-offset="10" data-wow-iteration="1">
                     <span>©Nacho's site</span>
                 </div>
 
-                <div class="footer-inner-body desktop" id="s-2">
+                <div class="footer-inner-body desktop wow slideInRight" id="s-2" data-wow-duration="1s" data-wow-delay=".0s" data-wow-offset="10" data-wow-iteration="1">
                     <span>©Nacho's site</span>
                 </div>
 

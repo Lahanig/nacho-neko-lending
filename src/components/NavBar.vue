@@ -1,17 +1,21 @@
 <!-- eslint-disable vue/no-unused-components -->
 <script>
 import { RouterLink } from 'vue-router'
-import { MenuOutline } from '@vicons/ionicons5'
+import { MenuOutline, MusicalNotesOutline, PlayCircleOutline } from '@vicons/ionicons5'
 import { ref } from 'vue'
 
 export default {
     components: {
         RouterLink,
-        MenuOutline
+        MenuOutline,
+        MusicalNotesOutline,
+        PlayCircleOutline
     },
     data() {
         return {
             isMenuShow: ref(false),
+            isBackgroundMusicToggled: ref(false),
+            backgroundMusic: new Audio("../../src/assets/audio/background.mp3"),
             navTabs: ref([
                 {id: 0, name: 'Home', href: '#'},
                 {id: 1, name: 'Name card', href: '#name-card'},
@@ -31,15 +35,49 @@ export default {
                 menu.style.display = 'none'
                 this.isMenuShow = false
             }
+        },
+        toggleBackgroundMusic() {
+            this.backgroundMusic.volume = 0.025
+
+            if (this.isBackgroundMusicToggled == false) {
+                this.backgroundMusic.play()
+                this.isBackgroundMusicToggled = true
+            } else {
+                this.backgroundMusic.pause()
+                this.isBackgroundMusicToggled = false
+            }
         }
+    },
+    mounted() {
+        let bgMusicInterval = setInterval(() => {
+            if (this.isBackgroundMusicToggled === false) {
+                // eslint-disable-next-line no-unused-vars
+                this.backgroundMusic.play().then(() => {
+                    console.log("Интервал очищен")
+                    console.log("Воспроизведена фоновая музыка")
+                    this.isBackgroundMusicToggled = true
+
+                    clearInterval(bgMusicInterval) 
+                })
+                // eslint-disable-next-line no-unused-vars
+                .catch((e) => {
+                    console.log("Не удалось воспроизвести фоновую музыку")
+                    this.isBackgroundMusicToggled = false
+                })
+
+                this.backgroundMusic.volume = 0.025
+            }
+
+            // this.isBackgroundMusicToggled = true
+        }, 100)
     }
 }
 </script>
 
 <template>
     <header>
-        <nav class="shadow non-select">
-            <div class="nav-item-logo">
+        <nav class="shadow non-select wow fadeInDown" data-wow-duration="1s" data-wow-delay=".0s" data-wow-offset="10" data-wow-iteration="1">
+            <div class="nav-item-logo wow slideInLeft" data-wow-duration="1s" data-wow-delay=".0s" data-wow-offset="10" data-wow-iteration="1">
                 <img alt="logo" class="logo" src="/logo-2.png" width="60" height="60" />
                 <span>Nacho Dayo</span>
             </div>
@@ -52,7 +90,8 @@ export default {
                 </a>
             </div>
 
-            <div class="container mx-auto desktop" style="justify-content: center; align-items: center; position: absolute; max-width: 100%;">
+            <div class="container mx-auto desktop wow fadeInDown" style="justify-content: center; align-items: center; position: absolute; max-width: 100%;" 
+                data-wow-duration="1s" data-wow-delay=".3s" data-wow-offset="10" data-wow-iteration="1">
                 <div class="nav-item" v-for="tab in navTabs" :key="tab.id">
                     <a :href="tab.href" draggable="false"> 
                         {{ tab.name }} 
@@ -60,12 +99,14 @@ export default {
                 </div>
             </div>
 
-            <div class="navbar-line">
-                <button class="btn" @click="navbarMenu"><MenuOutline class="icon" /></button>
+            <div class="navbar-line wow slideInRight" data-wow-duration="1s" data-wow-delay=".0s" data-wow-offset="10" data-wow-iteration="1">
+                <button class="btn" @click="toggleBackgroundMusic" style="cursor: pointer!important; position: relative;"><PlayCircleOutline class="iconMusic" style="cursor: pointer!important;" /></button>
+
+                <button class="btn" @click="navbarMenu" style="position: relative;"><MenuOutline class="icon" /></button>
             </div>
         </nav>
 
-        <div class="wrapper">
+        <div class="wrapper wow fadeIn" v-cloak data-wow-duration="1s" data-wow-delay=".0s" data-wow-offset="10" data-wow-iteration="1">
             <div class="wrapper-inner">
                 
                 <div class="container">
@@ -74,7 +115,7 @@ export default {
                         <span>
                             The Nacho's Lending
                             This is a fan lending dedicated to Nacho Neko, it was created for the practice of website layout.
-                            <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Fun alert</button>
+                            <button type="button" v-cloak class="btn btn-primary mt-3 wow slideInRight" data-bs-toggle="modal" data-bs-target="#exampleModal" data-wow-duration="1s" data-wow-delay=".3s" data-wow-offset="100" data-wow-iteration="1">Fun alert</button>
                         </span>
 
                         
@@ -236,6 +277,19 @@ nav {
     border: none;
 }
 
+.navbar-line .btn .iconMusic {
+    width: 35px;
+    border: none;
+
+    z-index: 3;
+
+    cursor: pointer;
+}
+
+.navbar-line .btn .iconMusic:focus {
+    border: none;
+}
+
 .logo {
     display: flex;
 }
@@ -257,7 +311,7 @@ nav {
 }
 
 .tablet {
-    margin: 4.7812rem;
+    margin: 4.7807rem;
 
     display: none;
     
@@ -290,7 +344,7 @@ header {
         padding: 1.5rem 1rem;
     }
 
-    .navbar-line .btn {
+    .navbar-line .btn .icon {
         display: none;
     }
 

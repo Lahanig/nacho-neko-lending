@@ -67,8 +67,6 @@ export default {
 
                 this.backgroundMusic.volume = 0.025
             }
-
-            // this.isBackgroundMusicToggled = true
         }, 100)
     }
 }
@@ -118,7 +116,6 @@ export default {
                             <button type="button" v-cloak class="btn btn-primary mt-3 wow slideInRight" data-bs-toggle="modal" data-bs-target="#exampleModal" data-wow-duration="1s" data-wow-delay=".3s" data-wow-offset="100" data-wow-iteration="1">Fun alert</button>
                         </span>
 
-                        
                     </div>
 
                 </div>
@@ -266,28 +263,49 @@ nav {
 .navbar-line .btn {
     padding: .5rem .5rem;
     margin-right: .5rem;
+
+    color: var(--color-text);
+    border: none;
 }
 
 .navbar-line .btn .icon {
     width: 50px;
-    border: none;
+
+    transition: all ease .3s;
+}
+
+.navbar-line .btn .icon:hover {
+    transition: all ease .3s;
+
+    color: var(--primary-color-mute);
 }
 
 .navbar-line .btn .icon:focus {
-    border: none;
+    transition: all ease .3s;
+
+    color: var(--primary-color-mute);
 }
 
 .navbar-line .btn .iconMusic {
     width: 35px;
-    border: none;
 
     z-index: 3;
 
     cursor: pointer;
+
+    transition: all ease .3s;
+}
+
+.navbar-line .btn .iconMusic:hover {
+    transition: all ease .3s;
+
+    color: var(--primary-color-mute);
 }
 
 .navbar-line .btn .iconMusic:focus {
-    border: none;
+    transition: all ease .3s;
+
+    color: var(--primary-color-mute);
 }
 
 .logo {

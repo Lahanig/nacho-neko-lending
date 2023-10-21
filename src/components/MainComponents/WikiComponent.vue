@@ -18,7 +18,7 @@
 
                     <div class="wiki-inner-body-text-section" id="s-2">
                         <div class="wiki-inner-body-text-section-img">
-                            <img src="../../assets/imgs/name-card.webp" alt="">
+                            <img src="../../assets/imgs/name-card.webp" draggable="false">
                         </div>
                         
                         <div class="wiki-inner-body-text-section-title mt-4">Nachoneko</div>

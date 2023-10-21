@@ -14,8 +14,9 @@ export default {
             isMenuShow: ref(false),
             navTabs: ref([
                 {id: 0, name: 'Home', href: '#'},
-                {id: 1, name: 'About', href: '#about'},
-                {id: 2, name: 'Trivia', href: '#trivia'}
+                {id: 1, name: 'Name card', href: '#name-card'},
+                {id: 2, name: 'Gallery', href: '#gallery'},
+                {id: 3, name: 'Trivia', href: '#trivia'}
             ])
         }
     },
@@ -37,15 +38,15 @@ export default {
 
 <template>
     <header>
-        <nav class="shadow">
+        <nav class="shadow non-select">
             <div class="nav-item-logo">
                 <img alt="logo" class="logo" src="/logo-2.png" width="60" height="60" />
                 <span>Nacho Dayo</span>
             </div>
 
             <div class="container mx-auto tablet shadow p-0" style="justify-content: center; align-items: center; position: absolute; max-width: 100%;">
-                <a v-for="tab in navTabs" :key="tab.id" :href="tab.href" >
-                    <div class="nav-item">
+                <a v-for="tab in navTabs" :key="tab.id" :href="tab.href">
+                    <div class="nav-item" draggable="false">
                         {{ tab.name }}
                     </div>
                 </a>
@@ -53,7 +54,7 @@ export default {
 
             <div class="container mx-auto desktop" style="justify-content: center; align-items: center; position: absolute; max-width: 100%;">
                 <div class="nav-item" v-for="tab in navTabs" :key="tab.id">
-                    <a :href="tab.href"> 
+                    <a :href="tab.href" draggable="false"> 
                         {{ tab.name }} 
                     </a>
                 </div>
@@ -119,7 +120,8 @@ export default {
 
     padding-top: calc(2rem + 10vh);
 
-    background: url('../assets/imgs/background.png') no-repeat top;
+    background: url('../assets/imgs/background.png') no-repeat;
+    background-position: 70%;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -186,7 +188,7 @@ nav {
 
   background-color: var(--color-background-mute)!important;
 
-  z-index: 1;
+  z-index: 2;
 
   top: 0;
 }
@@ -293,7 +295,7 @@ header {
     }
 
     .wrapper-inner {
-        /* background-attachment: fixed; */
+        background-position: top;
         padding-top: 12rem;
     }
 
